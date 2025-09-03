@@ -37,8 +37,11 @@ if option == 'Prediction web app':
     engine = st.number_input('Enter Engine Capacity' , min_value= 0 , max_value=2000)
     max_power = st.number_input('Enter Maximum Power' ,min_value= 1 , max_value= 700)
     age = st.number_input('Enter Car Age' , min_value=1 , max_value=40)
-    make = st.selectbox('Enter Car Brand' , df['make'].unique())
-    model = st.selectbox('Enter Car Model' , df['model'].unique())
+
+    values =  df.groupby('make')['model'].unique().apply(list).to_dict()
+
+    make = st.selectbox('Enter Car Brand' , list(values.keys()))
+    model = st.selectbox('Enter Car Model' , values[make])
 
     col1 , col2 = st.columns(2)
     
@@ -134,6 +137,7 @@ elif option == 'Code Material':
         mime='text/csv'
     )
     st.text('You can download the dataset to use it for your own analysis or model building')
+
 
 
 
