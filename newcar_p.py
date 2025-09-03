@@ -31,12 +31,12 @@ if option == 'Prediction web app':
     st.title('Car price prediction we app')
 
 
-    year = st.number_input('Enter Car Manufacturing Year' , min_value= 1990 , max_value=2020)
+    year = st.number_input('Enter Car Manufacturing Year' , min_value= 1990 , max_value=2025)
     km_driven = st.number_input('Enter Kilometers Driven' ,min_value= 1 , max_value= 4000000)
-    mileage = st.number_input("Enter Mileage(km)" , min_value=1 , max_value=150)
-    engine = st.number_input('Enter Engine Capacity' , min_value= 0 , max_value=2000)
-    max_power = st.number_input('Enter Maximum Power' ,min_value= 1 , max_value= 700)
-    age = st.number_input('Enter Car Age' , min_value=1 , max_value=40)
+    mileage = st.number_input("Enter Mileage(km)" , min_value=1 , max_value=500)
+    engine = st.number_input('Enter Engine Capacity' , min_value= 0 , max_value=4000)
+    max_power = st.number_input('Enter Maximum Power' ,min_value= 1 , max_value= 2000)
+    age = st.number_input('Enter Car Age' , min_value=1 , max_value=200)
 
     values =  df.groupby('make')['model'].unique().apply(list).to_dict()
 
@@ -137,6 +137,7 @@ elif option == 'Code Material':
         mime='text/csv'
     )
     st.text('You can download the dataset to use it for your own analysis or model building')
+
 
 
 
