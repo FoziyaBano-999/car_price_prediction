@@ -116,7 +116,7 @@ elif option == 'Code Material':
     st.download_button(
         label='Download code',
         data=code,
-        file_name='newcar.py',
+        file_name='newcar_.py',
         mime ='text/x-python'
         )
     st.text('You can download the model traning code')
@@ -134,6 +134,7 @@ elif option == 'Code Material':
         mime='text/csv'
     )
     st.text('You can download the dataset to use it for your own analysis or model building')
+
 
 
 
