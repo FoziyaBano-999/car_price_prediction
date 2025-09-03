@@ -111,7 +111,7 @@ elif option == 'Code Material':
     st.text('you can see the code without pipeline')
 
 
-    with open('newcar.py' , 'r') as f:
+    with open('newcar_.py' , 'r') as f:
             code = f.read()
     st.download_button(
         label='Download code',
@@ -134,6 +134,7 @@ elif option == 'Code Material':
         mime='text/csv'
     )
     st.text('You can download the dataset to use it for your own analysis or model building')
+
 
 
 
